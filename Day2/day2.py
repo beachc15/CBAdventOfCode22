@@ -1,28 +1,21 @@
 def run1():
     player1score = 0
     player2score = 0
-    ans1, ans2 = '', ''
     with open(r"C:\Users\beach\PycharmProjects\CBAdventOfCode22\Day2\input", 'r') as f:
         lines = f.readlines()
         for line in lines:
             ans1, ans2 = line[0], line[2]
             ans2 = convert(ans2)
-            print('P1 played: ', ans1, 'P2 played: ', ans2)
-            thewinner = winner(ans1, ans2)
-            print('winner was', thewinner)
-            if thewinner == 1:
+            the_winner = winner(ans1, ans2)
+            if the_winner == 1:
                 player1score += 6
-                print('P1 got 6 addt points')
-            elif thewinner == 2:
+            elif the_winner == 2:
                 player2score += 6
-                print('P2 got 6 addt points')
-            elif thewinner == 0:
-                print('draw')
+            elif the_winner == 0:
                 player1score += 3
                 player2score += 3
             else:
-                print("ERROR")
-            # add score based on choice
+                pass
             player1score += score(ans1)
             player2score += score(ans2)
 
@@ -39,7 +32,6 @@ def run2():
             # 0 for lose, 1 for draw, 2 for win
             the_outcome = convert2(the_outcome)
             ans2 = give_move(ans1, the_outcome)
-            print(ans1, ans2)
             thewinner = winner(ans1, ans2)
 
             if thewinner == 1:
