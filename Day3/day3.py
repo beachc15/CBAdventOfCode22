@@ -1,36 +1,28 @@
-def run1():
+def solve():
     score = 0
     with open(r"C:\Users\beach\PycharmProjects\CBAdventOfCode22\Day3\input", 'r') as f:
-        lines = f.readlines()
-        for line in lines:
-            match = False
-            firstpart, secondpart = line[:len(line) // 2], line[len(line) // 2:]
-            print(firstpart, secondpart)
-            for character in firstpart:
-                if character in secondpart and match == False:
-                    match = True
+        for line in f:
+            first_half, second_half = line[:len(line) // 2], line[len(line) // 2:]
+            for character in first_half:
+                if character in second_half:
                     score += priority(character)
+                    break
     return score
 
 
-def run2():
-    sack_i = 0
-    score = 0
+def solve2():
+    sack_i, score = 0, 0
     with open(r"C:\Users\beach\PycharmProjects\CBAdventOfCode22\Day3\input", 'r') as f:
-        input = f.read()
-    chunks = input.split('\n')
+        chunks = f.read().split('\n')
     while sack_i < len(chunks) - 1:
-        match = False
         c1 = (chunks[sack_i])
         c2 = (chunks[sack_i + 1])
         c3 = (chunks[sack_i + 2])
 
         for character in c1:
-
-            if character in c2 and character in c3 and match is False:
-                print(character)
-                match = True
+            if c1.find(character) != -1 and c2.find(character) != -1 and c3.find(character) != -1:
                 score += priority(character)
+                break
 
         sack_i += 3
 
@@ -45,4 +37,5 @@ def priority(x):
 
 
 if __name__ == '__main__':
-    print(run2())
+    print(solve())
+    print(solve2())
