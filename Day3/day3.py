@@ -1,4 +1,3 @@
-import time
 
 def solve(part):
     score = 0
@@ -42,8 +41,5 @@ def priority(x):
 
 
 if __name__ == '__main__':
-    start = time.time()
     print(solve(1))
     print(solve(2))
-    end = time.time()
-    print(end-start)
