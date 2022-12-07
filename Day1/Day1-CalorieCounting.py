@@ -3,7 +3,7 @@
 def run2():
     current_calorie = 0
     top_three = [0, 0, 0]
-    with open('/Users/charliebeach/PycharmProjects/CBAdventOfCode22/Day1/input', 'r') as f:
+    with open('input', 'r') as f:
         lines = f.readlines()
         for line in lines:
             if line == '\n':
@@ -19,7 +19,7 @@ def run2():
 def run1():
     current_calorie = 0
     max_cal = 0
-    with open('/Users/charliebeach/PycharmProjects/CBAdventOfCode22/Day1/input', 'r') as f:
+    with open('input', 'r') as f:
         lines = f.readlines()
         for line in lines:
             if line == '\n':
@@ -34,5 +34,5 @@ def run1():
 if __name__ == '__main__':
     answer1 = run1()
     answer2 = run2()
-    print("Max calories carried by an elf is", answer1)
-    print('Combined calories carried by top 3 elfs is', answer2)
+    print(answer1)
+    print(answer2)
